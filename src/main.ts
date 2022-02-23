@@ -11,20 +11,16 @@ async function bootstrap() {
   //create a Nest application with Express under the hood
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  /*To associate nunjucks with express,
-we need to get the underlying express platform from Nest
-app */
+  /*To associate nunjucks with express, we need to get the underlying express platform from Nest app */
   const express = app.getHttpAdapter().getInstance();
   const staticAssets = join(__dirname, '..', 'static');
   app.useStaticAssets(staticAssets);
-  /*We also need to get directory name views (create it in
-project root directory),
-which is the root directory for our template files*/
+  /*We also need to get directory name views (create it in project root directory),which is the root directory for our template files*/
   const views = join(__dirname, '..', 'views');
-  /*Finally, configure nunjucks, setting views and express
-declared above*/
+  /*Finally, configure nunjucks, setting views and expressdeclared above*/
   nunjucks.configure(views, { express });
   app.set('view engine','html')
   await app.listen(3000);
+  console.log('Ife')
 }
 bootstrap();
