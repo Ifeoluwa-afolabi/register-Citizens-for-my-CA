@@ -7,22 +7,13 @@ export class AppService {
   }
 
   getHello2(): {} {
-    return {message: 'Hello World!', title: 'My Greeting App'};
+    return { message: 'Hello World!', title: 'My Greeting App' };
   }
 
   getHome(): {} {
-    return {title: 'Home Page'};
+    return { title: 'Home Page' };
   }
-  
   getAboutUs(): {} {
-    return {title: 'About Us Page'};
-  }
-
-  getService(): {} {
-    return {title:  'Service Page'}
-  }
-
-  getContactUs(): {} {
-    return {title:   'Contact Us Page'}
+    return { title: 'About Us Page' };
   }
 }
